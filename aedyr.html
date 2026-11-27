@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aedyr</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+header {
+    height: 65px;
+    background: white;
+    color: #080808;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: relative;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1;
+}
+
+.switch {
+    text-decoration: none;
+    color: #080808;
+    font-size: 12px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    padding: 9px 16px;
+    transition: .3s;
+    margin-left: auto;
+}
+
+.switch:hover {
+    background: #080808;
+    color: white;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 0;
+    position: relative;
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category {
+    min-height: 190px;
+    background: white;
+    color: #080808;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    transition: .3s ease;
+}
+
+.category:hover {
+    background: #d5d5d5;
+    transform: translateY(-6px);
+}
+
+.category span:first-child {
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 2px;
+}
+
+.category span:last-child {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+/* SUMMARY */
+
+.summary {
+    margin-top: 65px;
+    padding: 35px;
+    background: #151515;
+    border-left: 4px solid white;
+}
+
+.summary h2 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.summary p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #aaa;
+    margin-bottom: 22px;
+}
+
+.summary p:last-child {
+    margin-bottom: 0;
+}
+
+/* COSMIC BACKGROUND */
+
+.cosmic-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at 50% 40%,
+        #171717 0%,
+        #0b0b0b 45%,
+        #050505 100%
+    );
+}
+
+/* GOLD GLOW */
+
+.ambient-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+        circle,
+        rgba(190, 160, 100, .09),
+        transparent 70%
+    );
+    animation: ambientPulse 9s ease-in-out infinite alternate;
+}
+
+@keyframes ambientPulse {
+    from {
+        opacity: .35;
+        transform: translateX(-50%) scale(.8);
+    }
+
+    to {
+        opacity: .9;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+/* CELESTIAL RINGS */
+
+.celestial-ring {
+    position: absolute;
+    border: 1px solid rgba(220, 210, 180, .055);
+    border-radius: 50%;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+}
+
+.ring-one {
+    width: 550px;
+    height: 550px;
+    animation: rotateRing 80s linear infinite;
+}
+
+.ring-two {
+    width: 850px;
+    height: 850px;
+    border-style: dashed;
+    border-color: rgba(255,255,255,.035);
+    animation: rotateRing 120s linear infinite reverse;
+}
+
+.ring-three {
+    width: 1150px;
+    height: 1150px;
+    border-color: rgba(220, 190, 130, .025);
+    animation: rotateRing 160s linear infinite;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* FLOATING STARS */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+        radial-gradient(1px 1px at 20% 80%, #d9c99e, transparent),
+        radial-gradient(2px 2px at 40% 40%, #fff, transparent),
+        radial-gradient(1px 1px at 60% 15%, #fff, transparent),
+        radial-gradient(2px 2px at 75% 65%, #d9c99e, transparent),
+        radial-gradient(1px 1px at 90% 30%, #fff, transparent),
+        radial-gradient(1px 1px at 85% 90%, #fff, transparent),
+        radial-gradient(2px 2px at 30% 55%, #d9c99e, transparent);
+    background-size: 350px 350px;
+    animation: starDrift 35s linear infinite;
+    opacity: .4;
+}
+
+@keyframes starDrift {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-350px);
+    }
+}
+
+/* SHOOTING STARS */
+
+.shooting-stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.shooting-stars::before,
+.shooting-stars::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+    transform: rotate(-35deg);
+    opacity: 0;
+    animation: shootingStar 9s linear infinite;
+}
+
+.shooting-stars::before {
+    top: 15%;
+    left: 70%;
+}
+
+.shooting-stars::after {
+    top: 45%;
+    left: 25%;
+    animation-delay: 5s;
+}
+
+@keyframes shootingStar {
+    0%, 75% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+
+    78% {
+        opacity: .8;
+    }
+
+    90% {
+        opacity: 0;
+        transform: translate(-350px, 250px) rotate(-35deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    header {
+        height: 58px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .switch {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+    .container {
+        width: auto;
+        margin: 0;
+        padding: 35px 20px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .category {
+        min-height: 145px;
+        padding: 14px;
+    }
+
+    .category span:last-child {
+        font-size: 16px;
+    }
+
+    .summary {
+        margin-top: 40px;
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cosmic-background">
+    <div class="ambient-glow"></div>
+    <div class="celestial-ring ring-one"></div>
+    <div class="celestial-ring ring-two"></div>
+    <div class="celestial-ring ring-three"></div>
+    <div class="stars"></div>
+    <div class="shooting-stars"></div>
+</div>
+
+<header>
+    <div class="logo">Aedyr</div>
+
+    <a href="aetherion.html" class="switch">
+        AETHERION ↗
+    </a>
+</header>
+
+<main class="container">
+
+    <section class="categories">
+
+        <a href="Aedyr-characters.html" class="category">
+            <span>01 / EXPLORE</span>
+            <span>Characters ↗</span>
+        </a>
+
+        <a href="aedyr-nations.html" class="category">
+            <span>02 / EXPLORE</span>
+            <span>Nations ↗</span>
+        </a>
+
+        <a href="aedyr-history.html" class="category">
+            <span>03 / EXPLORE</span>
+            <span>History ↗</span>
+        </a>
+
+        <a href="aedyr-others.html" class="category">
+            <span>04 / EXPLORE</span>
+            <span>Other Characters ↗</span>
+        </a>
+
+    </section>
+
+    <section class="summary">
+
+        <h2>BRIEF SUMMARY OF THE WORLD</h2>
+
+        <p>
+            Aedyr was once a land of flawless balance, created as a perfect world free from corruption. Entrusted with its care was a witch, a creation of God whose purpose was to govern the world, watch over its inhabitants, and maintain the harmony of all things. She was also the source of humanity's extraordinary abilities, granting gifts and powers to those who inhabited the world. Despite her divine purpose, the witch possessed a curious soul, always longing to discover what lay beyond the boundaries of Aedyr.
+        </p>
+
+        <p>
+            Her curiosity eventually led her to Earth, where she encountered a world unlike her own. There, she fell in love with a mortal and bore a child, allowing herself to become attached to a life far from the one she had been entrusted to oversee. Her prolonged absence left Aedyr without its guardian, disrupting the balance she had once maintained. When God discovered what had become of his creation, his anger was immeasurable. Viewing her actions as a betrayal of her divine purpose, he condemned her to a terrible fate. The witch was stripped of her existence, and her soul was torn apart into seven fragments, each embodying a different sin.
+        </p>
+
+        <p>
+            From these fragments emerged the Seven Sins, born from the very soul that had once protected the world. They became the foundation of its corruption.
+        </p>
+
+        <p>
+            Ever since, sin has become an inseparable part of life in Aedyr. Pride, greed, envy, lust, gluttony, wrath, and sloth have taken root within humanity, their influence reaching every corner of the land. Yet the witch's gifts did not disappear entirely with her. The people of Aedyr continue to possess extraordinary abilities, though their powers and the nature of their souls became linked with the nation they're in. Only a select few are born untouched by the corruption of sin, their souls remaining pure and untainted. They are rare, almost like remnants of the world as it once was. The majority, however, are born carrying the stain of sin, some embracing it willingly, while others fall victim to its influence without ever understanding its origin.
+        </p>
+
+        <p>
+            And so, Aedyr remains a world divided between the few who are born pure and the many who live beneath the rule of the Seven Sins, the shattered remnants of the very soul that once watched over and protected them.
+        </p>
+
+    </section>
+
+</main>
+
+</body>
+</html>

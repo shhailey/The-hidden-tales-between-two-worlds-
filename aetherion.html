@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aetherion</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f3;
+    color: #111;
+    min-height: 100vh;
+}
+
+header {
+    height: 65px;
+    background: #080808;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.switch {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    border: 1px solid #777;
+    border-radius: 30px;
+    padding: 9px 16px;
+    transition: .3s;
+}
+
+.switch:hover {
+    background: white;
+    color: black;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 55px 5%;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category {
+    min-height: 190px;
+    background: #080808;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    transition: .3s ease;
+}
+
+.category:hover {
+    background: #333;
+    transform: translateY(-6px);
+}
+
+.category span:first-child {
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+.category span:last-child {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+.summary {
+    margin-top: 65px;
+    padding: 35px;
+    background: white;
+    border-left: 4px solid #111;
+}
+
+.summary h2 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.summary p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 45px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+@media(max-width: 650px) {
+    header {
+        height: 58px;
+        padding: 0 20px;
+    }
+
+    .container {
+        padding: 35px 20px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .category {
+        min-height: 145px;
+        padding: 14px;
+    }
+
+    .category span:last-child {
+        font-size: 16px;
+    }
+
+    .summary {
+        margin-top: 40px;
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Aetherion</div>
+    <a href="aedyr.html" class="switch">AEDYR ↗</a>
+</header>
+
+<main class="container">
+
+    <section class="categories">
+
+        <a href="#characters" class="category">
+            <span>01 / EXPLORE</span>
+            <span>Characters ↗</span>
+        </a>
+
+        <a href="#nations" class="category">
+            <span>02 / EXPLORE</span>
+            <span>Nations ↗</span>
+        </a>
+
+        <a href="#history" class="category">
+            <span>03 / EXPLORE</span>
+            <span>History ↗</span>
+        </a>
+
+        <a href="#other-characters" class="category">
+            <span>04 / EXPLORE</span>
+            <span>Other Characters ↗</span>
+        </a>
+
+    </section>
+
+    <section class="summary">
+        <h2>BRIEF SUMMARY OF THE WORLD</h2>
+        <p>
+            Kineme kineme        </p>
+    </section>
+
+    <a href="AedyrAetherion.html" class="back">← BACK TO HOMEPAGE</a>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    height: 65px;
+    background: white;
+    color: #080808;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: relative;
+}
+
+.logo {
+    font-size: 23px;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.switch {
+    text-decoration: none;
+    color: #080808;
+    font-size: 12px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    padding: 9px 16px;
+    transition: .3s;
+}
+
+.switch:hover {
+    background: #080808;
+    color: white;
+}
+
+/* MAIN */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 55px 0 80px;
+}
+
+.page-title {
+    font-size: clamp(40px, 7vw, 75px);
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.page-description {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+/* ARCHIVE */
+
+.archive-intro {
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    padding: 20px 0;
+    margin-bottom: 45px;
+}
+
+.archive-intro span {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+/* NATIONS */
+
+.nation-section {
+    margin-bottom: 35px;
+}
+
+/* CLICKABLE NATION HEADING */
+
+.nation-section summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #777;
+    transition: .3s;
+}
+
+.nation-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.nation-section summary::after {
+    content: "+";
+    font-size: 25px;
+    font-weight: 300;
+    color: #aaa;
+    transition: .3s;
+}
+
+.nation-section[open] summary::after {
+    content: "−";
+    color: white;
+}
+
+.nation-section summary:hover {
+    border-color: white;
+}
+
+.nation-number {
+    display: block;
+    font-size: 9px;
+    color: #888;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.nation-name {
+    font-size: clamp(20px, 4vw, 29px);
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+/* NATION INFORMATION */
+
+.nation-content {
+    padding: 15px 0 10px;
+    animation: fadeIn .4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* INFORMATION TABLE */
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.info-table tr {
+    border-bottom: 1px solid #292929;
+}
+
+.info-table th {
+    width: 210px;
+    padding: 20px 15px 20px 0;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ccc;
+    vertical-align: top;
+}
+
+.info-table td {
+    padding: 20px 15px;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #999;
+    border-left: 1px solid #292929;
+}
+
+.add-info {
+    color: #555;
+    font-style: italic;
+}
+
+/* FOOTER */
+
+.nation-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 9px;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+/* BACK TO TOP */
+
+.back {
+    display: block;
+    width: fit-content;
+    margin: 70px auto 0;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 14px 25px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: .3s;
+}
+
+.back:hover {
+    background: white;
+    color: #080808;
+}
+
+/* MOBILE */
+
+@media(max-width: 650px) {
+
+    header {
+        height: 58px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .switch {
+        font-size: 9px;
+        padding: 8px 9px;
+    }
+
+    .container {
+        width: auto;
+        margin: 0;
+        padding: 40px 20px 60px;
+    }
+
+    .nation-name {
+        font-size: 19px;
+        letter-spacing: 1.5px;
+    }
+
+    .info-table th {
+        width: 115px;
+        font-size: 10px;
+    }
+
+    .info-table td {
+        font-size: 11px;
+        padding: 15px 10px;
+    }
+
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<header>
+    <a href="aedyr.html" class="switch">
+        ← BACK TO AEDYR
+    </a>
+
+    <div class="logo">Aedyr</div>
+
+    <a href="characters.html" class="switch">
+        CHARACTERS ↗
+    </a>
+</header>
+
+<main class="container">
+
+<h1 class="page-title">NATIONS</h1>
+
+<p class="page-description">
+   THE SEVEN NATIONS OF AEDYR.
+<div class="archive-intro">
+    <span>THE NATION ARCHIVES / AEDYR</span>
+</div>
+
+
+
+<!-- 01 / STOLZELYS -->
+
+<details class="nation-section">
+
+<summary>
+    <div>
+        <span class="nation-number">01 / THE NATION OF PRIDE</span>
+        <h2 class="nation-name">STOLZELYS</h2>
+    </div>
+</summary>
+
+<div class="nation-content">
+
+<table class="info-table">
+
+<tr><th>Sin</th><td>PRIDE</td></tr>
+<tr><th>Ruler</th><td>Reiko</td></tr>
+<tr><th>Language/s</th><td>GERMAN / LATIN</td></tr>
+<tr><th>Short Info</th><td>THE STRONGEST OF ALL.</td></tr>
+
+</table>
+
+</div>
+</details>
+
+
+<!-- 02 / CLEPTOSACRA -->
+
+<details class="nation-section">
+
+<summary>
+    <div>
+        <span class="nation-number">02 / THE NATION OF GREED</span>
+        <h2 class="nation-name">CLEPTOSACRA</h2>
+    </div>
+</summary>
+
+<div class="nation-content">
+
+<table class="info-table">
+
+<tr><th>Sin</th><td>GREED</td></tr>
+<tr><th>Ruler</th><td>Gabriel Duropo</td></tr>
+<tr><th>Language/s</th><td>LATIN / GREEK / ITALIAN</td></tr>
+<tr><th>Short Info</th><td>A NATION DEVOTED TO THEIR OWN RELIGION.</td></tr>
+
+</table>
+
+</div>
+</details>
+
+
+<!-- 03 / AFGUNSPIEGEL -->
+
+<details class="nation-section">
+
+<summary>
+    <div>
+        <span class="nation-number">03 / THE NATION OF ENVY</span>
+        <h2 class="nation-name">AFGUNSPIEGEL</h2>
+    </div>
+</summary>
+
+<div class="nation-content">
+
+<table class="info-table">
+
+<tr><th>Sin</th><td>ENVY</td></tr>
+<tr><th>Ruler</th><td>Ryx Valterhis</td></tr>
+<tr><th>Language/s</th><td>?</td></tr>
+<tr><th>Short Info</th><td>?</td></tr>
+
+</table>
+
+</div>
+</details>
+
+
+<!-- 04 / IVREMIWAKU -->
+
+<details class="nation-section">
+
+<summary>
+    <div>
+        <span class="nation-number">04 / THE NATION OF LUST</span>
+        <h2 class="nation-name">IVREMIWAKU</h2>
+    </div>
+</summary>
+
+<div class="nation-content">
+
+<table class="info-table">
+
+<tr><th>Sin</th><td>LUST</td></tr>
+<tr><th>Ruler</th><td>Azhar Thomyris Aurelius</td></tr>
+<tr><th>Language/s</th><td>?</td></tr>
+<tr><th>Short Info</th><td>?</td></tr>
+
+</table>
+
+</div>
+</details>
+
+
+<!-- 05 / COLERANZA -->
+
+<details class="nation-section">
+
+<summary>
+    <div>
+        <span class="nation-number">05 / THE NATION OF WRATH</span>
+        <h2 class="nation-name">COLERANZA</h2>
+    </div>
+</summary>
+
+<div class="nation-content">
+
+<table class="info-table">
+
+<tr><th>Sin</th><td>WRATH</td></tr>
+<tr><th>Ruler</th><td>Ignar Valcair</td></tr>
+<tr><th>Language/s</th><td>?</td></tr>
+<tr><th>Short Info</th><td>?</td></tr>
+
+</table>
+
+</div>
+</details>
+
+
+<!-- 06 / GORGEMONT -->
+
+<details class="nation-section">
+
+<summary>
+    <div>
+        <span class="nation-number">06 / THE NATION OF GLUTTONY</span>
+        <h2 class="nation-name">GORGEMONT</h2>
+    </div>
+</summary>
+
+<div class="nation-content">
+
+<table class="info-table">
+
+<tr><th>Sin</th><td>GLUTTONY</td></tr>
+<tr><th>Ruler</th><td>Lyser Blankenheim</td></tr>
+<tr><th>Language/s</th><td>?</td></tr>
+<tr><th>Short Info</th><td>?</td></tr>
+
+</table>
+
+</div>
+</details>
+
+
+<!-- 07 / LETISEFJA -->
+
+<details class="nation-section">
+
+<summary>
+    <div>
+        <span class="nation-number">07 / THE NATION OF SLOTH</span>
+        <h2 class="nation-name">LETISEFJA</h2>
+    </div>
+</summary>
+
+<div class="nation-content">
+
+<table class="info-table">
+
+<tr><th>Sin</th><td>SLOTH</td></tr>
+<tr><th>Ruler</th><td>Elric Nochtain</td></tr>
+<tr><th>Language/s</th><td>?</td></tr>
+<tr><th>Short Info</th><td>?</td></tr>
+
+</table>
+
+</div>
+</details>
+
+
+<!-- BACK TO TOP -->
+
+<a href="#top" class="back">
+    ↑ BACK TO TOP
+</a>
+
+</main>
+
+</body>
+</html>

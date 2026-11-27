@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    height: 65px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #080808;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    padding: 9px 16px;
+    transition: .3s;
+}
+
+.back-button:hover {
+    background: #080808;
+    color: white;
+}
+
+/* MAIN */
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+    padding: 65px 0;
+}
+
+.page-title {
+    font-size: clamp(45px, 7vw, 70px);
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-bottom: 45px;
+}
+
+/* AUTHOR PROFILE */
+
+.author-profile {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: #101010;
+    border: 1px solid #303030;
+    padding: 30px;
+}
+
+.author-image {
+    width: 190px;
+    height: 230px;
+    flex-shrink: 0;
+    background: #181818;
+    border: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.author-info {
+    flex: 1;
+}
+
+.eyebrow {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.author-name {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+/* DETAILS */
+
+.details {
+    padding-left: 20px;
+}
+
+.details li {
+    border-bottom: 1px solid #333;
+    padding: 13px 0;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.details li::marker {
+    color: #888;
+}
+
+.details strong {
+    color: #888;
+    font-weight: 400;
+}
+
+/* SUGGESTIONS BUTTON */
+
+.suggestions {
+    margin-top: 65px;
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 1px solid #333;
+}
+
+.suggestions-button {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 1px solid #777;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 3px;
+    transition: .3s ease;
+}
+
+.suggestions-button:hover {
+    background: white;
+    color: #080808;
+    border-color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    header {
+        height: 58px;
+        padding: 0 15px;
+    }
+
+    .container {
+        width: auto;
+        margin: 0 20px;
+        padding: 45px 0;
+    }
+
+    .author-profile {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .author-image {
+        width: 100%;
+        max-width: 230px;
+        height: 250px;
+    }
+
+    .author-info {
+        width: 100%;
+    }
+
+    .author-name {
+        text-align: center;
+    }
+
+    .eyebrow {
+        text-align: center;
+    }
+
+    .suggestions {
+        margin-top: 45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="AedyrAetherion.html" class="back-button">
+        ← BACK
+    </a>
+</header>
+
+<main class="container">
+
+    <h1 class="page-title">AUTHOR</h1>
+
+    <!-- AUTHOR PROFILE -->
+
+    <section class="author-profile">
+
+        <div class="author-image">
+            <span class="Screenshot_20260915-225133.jpg">AUTHOR IMAGE</span>
+        </div>
+
+        <div class="author-info">
+
+            <div class="eyebrow">ABOUT THE AUTHOR</div>
+
+            <h2 class="author-name">
+                SHAWN HAILEY LERIN
+            </h2>
+
+            <!-- ORDERED LIST -->
+
+            <ol class="details">
+                <li>
+                    <strong>NAME:</strong>
+                    SHAWN HAILEY LERIN
+                </li>
+
+                <li>
+                    <strong>SECTION:</strong>
+                    10 SCHRÖDINGER
+                </li>
+
+                <li>
+                    <strong>AGE:</strong>
+                    17
+                </li>
+            </ol>
+
+        </div>
+
+    </section>
+
+    <!-- SUGGESTIONS BUTTON -->
+
+    <section class="suggestions">
+
+        <a href="suggestions.html" class="suggestions-button">
+            ANY SUGGESTIONS? ↗
+        </a>
+
+    </section>
+
+</main>
+
+</body>
+</html>

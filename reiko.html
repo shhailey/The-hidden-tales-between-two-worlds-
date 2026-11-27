@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #08050b;
+    --dark: #100a15;
+    --panel: #140d1b;
+    --violet: #8145a8;
+    --light-violet: #c49be0;
+    --soft-violet: #9672ad;
+    --muted: #82718c;
+    --white: #eee5f2;
+    --border: #392345;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(101,45,132,.17), transparent 55%),
+        radial-gradient(ellipse at 0% 100%, rgba(75,30,100,.10), transparent 40%);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    opacity: .035;
+    pointer-events: none;
+    z-index: 5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+    padding: 65px 0;
+}
+
+/* DECORATION */
+
+.web {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    opacity: .16;
+    pointer-events: none;
+    background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 14deg,
+        var(--light-violet) 14.3deg 14.7deg,
+        transparent 15deg 45deg
+    );
+    mask-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0 20px,
+        black 21px 22px,
+        transparent 23px 40px
+    );
+    -webkit-mask-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0 20px,
+        black 21px 22px,
+        transparent 23px 40px
+    );
+}
+
+.web-left { top: 0; left: 0; }
+.web-right { top: 0; right: 0; transform: scaleX(-1); }
+
+/* INTRO */
+
+.character-intro {
+    position: relative;
+    text-align: center;
+    padding: 85px 30px 75px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(29,15,39,.96), rgba(8,5,11,.98));
+    border: 1px solid var(--violet);
+    box-shadow: 0 0 35px rgba(115,55,150,.10), inset 0 0 45px rgba(115,55,150,.06);
+}
+
+.character-intro::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(196,155,224,.22);
+    pointer-events: none;
+}
+
+.character-intro::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: -280px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(139,69,199,.25);
+    filter: blur(100px);
+    border-radius: 50%;
+}
+
+.insignia {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--violet);
+    transform: rotate(45deg);
+    box-shadow: 0 0 20px rgba(139,69,199,.16);
+}
+
+.insignia span {
+    transform: rotate(-45deg);
+    font-family: 'Cinzel', serif;
+    font-size: 27px;
+    color: var(--light-violet);
+}
+
+.eyebrow {
+    position: relative;
+    color: var(--light-violet);
+    font-size: 9px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.character-intro h1 {
+    position: relative;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: clamp(38px, 8vw, 76px);
+    letter-spacing: 7px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 0 0 25px rgba(196,155,224,.20);
+}
+
+.character-title {
+    position: relative;
+    margin-top: 20px;
+    color: var(--light-violet);
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.character-divider {
+    width: 100px;
+    height: 1px;
+    margin: 35px auto;
+    background: linear-gradient(90deg, transparent, var(--light-violet), transparent);
+    box-shadow: 0 0 10px var(--violet);
+}
+
+.character-quote {
+    position: relative;
+    max-width: 550px;
+    margin: auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.8;
+    color: #b8a5c4;
+}
+
+.royal-status {
+    display: inline-block;
+    position: relative;
+    margin-top: 35px;
+    padding: 10px 24px;
+    border: 1px solid rgba(196,155,224,.35);
+    color: var(--light-violet);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* SECTIONS */
+
+.section { margin-top: 65px; }
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-heading h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--light-violet);
+}
+
+.section-heading span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+/* INFORMATION */
+
+.info-wrapper {
+    position: relative;
+    padding: 22px 25px;
+    background: linear-gradient(120deg, var(--panel), #0d0812);
+    border: 1px solid var(--border);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 19px 15px;
+    border-bottom: 1px solid rgba(130,90,150,.16);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.info-table tr:last-child td { border-bottom: none; }
+
+.info-table td:first-child {
+    width: 32%;
+    color: var(--light-violet);
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.info-table td:last-child {
+    color: #d4c5dd;
+    letter-spacing: 1px;
+}
+
+/* DESCRIPTION */
+
+.description {
+    position: relative;
+    padding: 35px 38px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: inset 3px 0 0 rgba(139,69,199,.5);
+}
+
+.description p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.9;
+    letter-spacing: .3px;
+    color: #c1b0cb;
+}
+
+/* DIVIDER */
+
+.web-divider {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 48px 0 10px;
+}
+
+.web-divider::before,
+.web-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, var(--border), var(--violet));
+}
+
+.web-divider::after {
+    background: linear-gradient(90deg, var(--violet), var(--border), transparent);
+}
+
+.web-divider span {
+    width: 7px;
+    height: 7px;
+    background: var(--violet);
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px var(--violet);
+}
+
+/* ABILITIES */
+
+.ability-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+}
+
+.ability-card {
+    position: relative;
+    padding: 30px;
+    background: linear-gradient(145deg, #1b1024, #0d0812);
+    border: 1px solid var(--border);
+    transition: .3s ease;
+}
+
+.ability-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background: var(--violet);
+}
+
+.ability-card:hover {
+    border-color: var(--light-violet);
+    background: #21132d;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+.ability-card h3 {
+    margin-bottom: 16px;
+    color: var(--light-violet);
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.ability-card p {
+    color: #b5a3c0;
+    font-size: 11px;
+    line-height: 2;
+}
+
+/* SONG */
+
+.song-card {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 32px;
+    background: linear-gradient(120deg, #1b1025, #0b0710);
+    border: 1px solid var(--border);
+    transition: .3s ease;
+}
+
+.song-card:hover { border-color: var(--violet); }
+
+.song-art {
+    width: 155px;
+    height: 155px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #321844, #100819 70%);
+    border: 1px solid var(--violet);
+    box-shadow: inset 0 0 35px rgba(139,69,199,.18), 0 0 20px rgba(139,69,199,.08);
+}
+
+.song-art span {
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    color: var(--light-violet);
+}
+
+.song-info { flex: 1; }
+
+.song-label {
+    color: var(--soft-violet);
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-bottom: 13px;
+}
+
+.song-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+.song-artist {
+    margin-top: 7px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.song-divider {
+    width: 45px;
+    height: 1px;
+    background: var(--violet);
+    margin: 20px 0;
+}
+
+.song-description {
+    color: #a996b9;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.song-link {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 22px;
+    border: 1px solid var(--violet);
+    color: var(--light-violet);
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.song-link:hover {
+    background: var(--violet);
+    color: white;
+}
+
+/* BACK BUTTON */
+
+.back {
+    display: block;
+    width: fit-content;
+    margin: 75px auto 0;
+    padding: 15px 30px;
+    border: 1px solid var(--violet);
+    color: var(--light-violet);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.back:hover {
+    background: var(--violet);
+    color: white;
+    box-shadow: 0 0 20px rgba(139,69,199,.25);
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 65px;
+    text-align: center;
+    color: #695574;
+    font-size: 8px;
+    letter-spacing: 4px;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .container {
+        width: auto;
+        margin: 0 16px;
+        padding: 35px 0;
+    }
+
+    .character-intro { padding: 65px 18px; }
+
+    .character-intro h1 {
+        font-size: clamp(35px, 10vw, 58px);
+        letter-spacing: 3px;
+    }
+
+    .character-title {
+        font-size: 9px;
+        letter-spacing: 3px;
+        line-height: 2;
+    }
+
+    .eyebrow {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .character-quote { font-size: 17px; }
+    .section { margin-top: 48px; }
+
+    .section-heading h2 {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-heading span {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .info-wrapper { padding: 12px; }
+
+    .info-table td {
+        padding: 15px 8px;
+        font-size: 10px;
+    }
+
+    .info-table td:first-child {
+        width: 38%;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .description { padding: 24px; }
+    .description p { font-size: 17px; }
+
+    .ability-grid { grid-template-columns: 1fr; }
+    .ability-card { padding: 25px; }
+
+    .song-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px;
+        gap: 25px;
+    }
+
+    .song-art {
+        width: 100%;
+        height: 150px;
+    }
+
+    .song-info h3 { font-size: 25px; }
+
+    .web {
+        width: 110px;
+        height: 110px;
+    }
+
+    .back { margin-top: 55px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+    <!-- ROYAL INTRO -->
+
+    <section class="character-intro">
+
+        <div class="web web-left"></div>
+        <div class="web web-right"></div>
+
+        <div class="character-title">
+            THE GOSPEL OF THE MORNING STAR.
+        </div>
+
+        <div class="character-divider"></div>
+
+        <p class="character-quote"></p>
+
+        <div class="royal-status">
+            The Queen of Stolzelys
+        </div>
+
+    </section>
+
+    <!-- GENERAL INFORMATION -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>General Information</h2>
+            <span>I / Profile</span>
+        </div>
+<div class="info-wrapper">
+    <table class="info-table">
+        <tr>
+            <td>FULL NAME</td>
+            <td>Athaliah Fastus Gottesurteil</td>
+        </tr>
+        <tr>
+            <td>TITLE</td>
+            <td>die Königin</td>
+        </tr>
+        <tr>
+            <td>SIN</td>
+            <td>PRIDE</td>
+        </tr>
+        <tr>
+            <td>AGE</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>BIRTHDATE</td>
+            <td>08/11</td>
+        </tr>
+        <tr>
+            <td>SEX</td>
+            <td>Female</td>
+        </tr>
+        <tr>
+            <td>SPECIES</td>
+            <td>Human</td>
+        </tr>
+        <tr>
+            <td>STATUS</td>
+            <td>Alive</td>
+        </tr>
+    </table>
+</div>
+    </section>
+
+    <div class="web-divider"><span></span></div>
+
+    <!-- PERSONALITY -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>Personality & Background</h2>
+            <span>II / Character</span>
+        </div>
+
+        <div class="description">
+            <p>The confident and prideful ruler of the Pride Kingdom, often coming across as arrogant or lacking humility. However, beneath her prideful exterior, she has a loving and caring heart, especially toward her people, whom she deeply cherishes and protects. She also holds a special love for Faron, who is one of her greatest prides and someone she deeply treasures.</p>
+            <br>
+        </div>
+
+    </section>
+
+    <div class="web-divider"><span></span></div>
+
+    <!-- ABILITIES -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>Abilities & Traits</h2>
+            <span>III / Capabilities</span>
+        </div>
+
+        <div class="ability-grid">
+
+            <div class="ability-card">
+                <h3>Primary Ability</h3>
+                <p>Her ability allows her to sense someone's whereabouts simply by knowing their true name. Through this connection, she can also perceive their current emotions, feelings, location, and the sin they are experiencing or embracing at that moment.</p>
+            </div>
+
+            <div class="ability-card">
+                <h3>Secondary Ability</h3>
+                <p>Reiko can create powerful runes capable of restraining and holding back almost anything, making them highly effective for containment and imprisonment.</p>
+            </div>
+
+            <div class="ability-card">
+                <h3>Strengths</h3>
+                <p>Reiko is highly intelligent, strategic, and quick-witted, allowing her to make sound decisions even in difficult situations. She is also a skilled fighter with strong combat abilities, making her capable both on and off the battlefield. Her mastery of runes and unique sensing abilities further enhance her versatility, making her a formidable ruler and opponent.</p>
+            </div>
+
+            <div class="ability-card">
+                <h3>Weaknesses</h3>
+                <p>?</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="web-divider"><span></span></div>
+
+    <!-- ADDITIONAL DETAILS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>Additional Details</h2>
+            <span>IV / Personal</span>
+        </div>
+
+        <div class="info-wrapper">
+            <table class="info-table">
+                <tr><td>HEIGHT</td><td>5'1</td></tr>
+                <tr><td>LIKES</td><td>FARON, BUNNIES, ROSES</td></tr>
+                <tr><td>DISLIKES</td><td>?</td></tr>
+                <tr><td>FEARS</td><td>?</td></tr>
+            </table>
+        </div>
+
+    </section>
+
+    <div class="web-divider"><span></span></div>
+
+    <!-- SONG INSPIRATION -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>Song Inspiration</h2>
+            <span>V / Soundtrack</span>
+        </div>
+
+        <div class="song-card">
+
+            <div class="song-art">
+                <span>♫</span>
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-label">
+                    HER PERSONAL SOUNDTRACK
+                </div>
+
+                <h3>Castle</h3>
+
+<p class="song-artist">HALSEY</p>
+
+<div class="song-divider"></div>
+
+                <a href="https://open.spotify.com/track/16w8ZGVSjI4TlTLV8VimBY?si=5cjN7LV6REyUFN1WngmGcg&utm_source=copy-link&sci=spotify%3Acard-config%3A027b1yWnngPVKMfco9T4EH" target="_blank" rel="noopener noreferrer" class="song-link">
+                    LISTEN TO SONG
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BACK BUTTON -->
+
+    <a href="aedyr-characters.html" class="back">
+        Return to Character Archives
+    </a>
+
+    <footer class="footer">
+        The Royal Archives<br>
+        Confidential Character Records
+    </footer>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yet to Be Discovered</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #080808;
+            color: #ffffff;
+            font-family: 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: normal;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 55px;
+            height: 1px;
+            background: #ffffff;
+            margin: 30px auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: 1px solid #ffffff;
+            background: transparent;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: #ffffff;
+            color: #080808;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Yet to Be Discovered</h1>
+
+        <div class="divider"></div>
+
+        <button class="back-button" onclick="history.back()">
+            ← Go Back
+        </button>
+
+    </main>
+
+</body>
+</html>

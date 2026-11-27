@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The First War | Aedyr Archives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">THE FIRST WAR</div>
+    <a href="aedyr.html" class="switch">AEDYR ↗</a>
+</header>
+
+<main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="eyebrow">AEDYR / HISTORICAL RECORDS</div>
+
+        <h1>THE FIRST WAR</h1>
+
+        <p>
+            A conflict that reshaped the Seven Kingdoms,
+            destroyed old alliances, and changed the course
+            of Aedyr's history.
+        </p>
+
+        <div class="date">
+            22 JULY 1677 — 12 DECEMBER 1683
+        </div>
+    </section>
+
+    <!-- OVERVIEW -->
+
+    <section class="section-heading">
+        <span>01 / HISTORICAL OVERVIEW</span>
+        <h2>The Beginning of an Era</h2>
+    </section>
+
+    <section class="overview">
+        <p>
+            The First War was a continental conflict between
+            Pride and the other kingdoms of Aedyr. What began
+            as growing political tension eventually developed
+            into a war that would determine the future of
+            the Seven Kingdoms.
+        </p>
+
+        <p>
+            Following Reiko's rise to power and Pride's
+            independence from Greed, the balance of power
+            across the continent began to change. Pride
+            gradually grew stronger, while relations between
+            the kingdoms became increasingly strained.
+        </p>
+
+        <p>
+            On July 22, 1677, Reiko officially declared war
+            against the other kingdoms. Greed, Wrath, Lust,
+            Envy, and eventually Gluttony formed a coalition
+            against Pride. Despite their common enemy,
+            disagreements and conflicting interests weakened
+            the alliance from within.
+        </p>
+
+        <p>
+            As the years passed, the coalition gradually
+            fell apart. Kingdoms began to fall, alliances
+            shifted, and Pride continued its campaigns
+            across the continent. On December 12, 1683,
+            the First War officially came to an end.
+        </p>
+    </section>
+
+    <!-- STATISTICS -->
+
+    <section class="statistics">
+
+        <div class="stat">
+            <h3>6 YEARS</h3>
+            <p>DURATION OF WAR</p>
+        </div>
+
+        <div class="stat">
+            <h3>7</h3>
+            <p>KINGDOMS INVOLVED</p>
+        </div>
+
+        <div class="stat">
+            <h3>1683</h3>
+            <p>YEAR OF CONCLUSION</p>
+        </div>
+
+    </section>
+
+    <!-- KINGDOMS -->
+
+    <section class="section-heading">
+        <span>02 / PARTICIPATING NATIONS</span>
+        <h2>The Seven Kingdoms</h2>
+    </section>
+
+    <section class="kingdoms">
+
+        <div class="kingdom">
+            <h3>Pride</h3>
+            <p>Led by Reiko. The kingdom at the center of the conflict.</p>
+        </div>
+
+        <div class="kingdom">
+            <h3>Greed</h3>
+            <p>Initially opposed Pride before eventually joining its side.</p>
+        </div>
+
+        <div class="kingdom">
+            <h3>Wrath</h3>
+            <p>One of the first kingdoms to oppose Pride.</p>
+        </div>
+
+        <div class="kingdom">
+            <h3>Lust</h3>
+            <p>Joined the coalition but later attacked neutral Sloth.</p>
+        </div>
+
+        <div class="kingdom">
+            <h3>Envy</h3>
+            <p>Aligned with the coalition while maintaining a cautious position.</p>
+        </div>
+
+        <div class="kingdom">
+            <h3>Sloth</h3>
+            <p>Refused to join the coalition and remained neutral.</p>
+        </div>
+
+        <div class="kingdom">
+            <h3>Gluttony</h3>
+            <p>Reluctantly joined the coalition before eventually collapsing.</p>
+        </div>
+
+    </section>
+
+    <!-- TIMELINE -->
+
+    <section class="section-heading" id="timeline">
+        <span>03 / CHRONOLOGICAL RECORD</span>
+        <h2>The Timeline of War</h2>
+    </section>
+
+    <section class="timeline">
+
+        <div class="event">
+            <div class="event-date">JUNE 14, 1668</div>
+            <h3>Greed Conquers Pride</h3>
+            <p>Greed establishes control over Pride, beginning a period of foreign rule.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">MARCH 02, 1674</div>
+            <h3>Reiko Takes Control of Pride</h3>
+            <p>At the age of 15, Reiko assumes control of Pride.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">1675</div>
+            <h3>The Rebuilding of Pride</h3>
+            <p>Pride undergoes internal reconstruction under Reiko's leadership.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">AUGUST 19, 1676</div>
+            <h3>The Acquisition of Myojo</h3>
+            <p>Reiko acquires Myojo, and Pride subsequently breaks free from Greed's control.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">JANUARY 07, 1677</div>
+            <h3>Rising Continental Tensions</h3>
+            <p>Tensions rise across the kingdoms, although no formal alliances have been established.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">JULY 22, 1677</div>
+            <h3>Declaration of War</h3>
+            <p>Reiko declares war against the other kingdoms, officially beginning the First War.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">NOVEMBER 18, 1677</div>
+            <h3>The First Coalition Pact</h3>
+            <p>Greed and Wrath begin forming an alliance against Pride.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">DECEMBER 29, 1677</div>
+            <h3>Lust Joins the Coalition</h3>
+            <p>Lust joins the emerging alliance, seeking strategic advantage.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">MARCH 14, 1678</div>
+            <h3>Envy Joins the Coalition</h3>
+            <p>Envy aligns itself with the coalition but avoids making a firm commitment.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">JUNE 03, 1678</div>
+            <h3>Sloth Declares Neutrality</h3>
+            <p>Sloth refuses to join the coalition and officially declares neutrality.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">SEPTEMBER 27, 1678</div>
+            <h3>Gluttony Joins the Coalition</h3>
+            <p>Gluttony reluctantly agrees to join the alliance.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">FEBRUARY 10, 1679</div>
+            <h3>Pride Begins Its Continental Campaigns</h3>
+            <p>Pride launches large-scale military campaigns across the continent.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">JUNE 16, 1679</div>
+            <h3>Lust Attacks Sloth</h3>
+            <p>Lust launches an attack against neutral Sloth, further weakening the coalition.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">NOVEMBER 03, 1679</div>
+            <h3>The Fall of Sloth</h3>
+            <p>Sloth falls following the mass suicide of its citizens.</p>
+            <div class="cause">CAUSE: MASS SUICIDE OF THE CITIZENS</div>
+        </div>
+
+        <div class="event">
+            <div class="event-date">MARCH 22, 1680</div>
+            <h3>The Collapse of Gluttony</h3>
+            <p>Gluttony begins to collapse under the pressure of famine and internal instability.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">JULY 21, 1680</div>
+            <h3>The Fall of Gluttony</h3>
+            <p>Gluttony officially falls after a significant decline in its population.</p>
+            <div class="cause">CAUSE: SIGNIFICANT POPULATION DECLINE</div>
+        </div>
+
+        <div class="event">
+            <div class="event-date">SEPTEMBER 18, 1680</div>
+            <h3>Greed's Secret Offensive</h3>
+            <p>Greed secretly prepares an independent offensive against Pride.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">OCTOBER 09, 1680</div>
+            <h3>The Surprise Attack</h3>
+            <p>Greed launches its surprise attack against Pride. During the assault, an injured Reiko encounters Satoshi.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">OCTOBER 30, 1680</div>
+            <h3>Myojo Crushes Greed's Offensive</h3>
+            <p>Myojo successfully brings Greed's independent offensive to an end.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">FEBRUARY 14, 1681</div>
+            <h3>Greed Changes Sides</h3>
+            <p>Greed abandons the coalition and aligns itself with Pride.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">MAY 06, 1681</div>
+            <h3>The Coalition Disintegrates</h3>
+            <p>The coalition completely falls apart, leaving the remaining kingdoms to fight their own wars.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">SEPTEMBER 05, 1681</div>
+            <h3>The Fall of Wrath</h3>
+            <p>Wrath falls, and Vermil defects to Pride.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">APRIL 18, 1682</div>
+            <h3>The Fall of Lust</h3>
+            <p>Lust falls, and Seraphel is surrendered to Pride.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">JANUARY 26, 1683</div>
+            <h3>The Fall of Envy</h3>
+            <p>Envy falls, marking another major defeat in the final years of the war.</p>
+        </div>
+
+        <div class="event">
+            <div class="event-date">DECEMBER 12, 1683</div>
+            <h3>The End of the First War</h3>
+            <p>After more than six years of conflict, the First War officially comes to an end.</p>
+        </div>
+
+    </section>
+</main>
+</body>
+</html>

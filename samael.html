@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 65px 0;
+}
+
+/* CHARACTER INTRO */
+
+.character-intro {
+    padding: 55px 30px;
+    text-align: center;
+    background: #000;
+    border: 1px solid #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.character-intro::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    filter: blur(90px);
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eyebrow {
+    font-size: 10px;
+    color: #fff;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.character-intro h1 {
+    font-size: clamp(55px, 10vw, 100px);
+    font-weight: 300;
+    letter-spacing: 12px;
+    color: #fff;
+    position: relative;
+}
+
+.character-title {
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.character-divider {
+    width: 50px;
+    height: 1px;
+    background: #fff;
+    margin: 30px auto;
+}
+
+.character-quote {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    line-height: 2;
+    position: relative;
+}
+
+/* SECTION */
+
+.section {
+    margin-top: 55px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.section-heading span {
+    color: #aaa;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* INFO TABLE */
+
+.info-wrapper {
+    background: #000;
+    border: 1px solid #fff;
+    padding: 20px;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #fff;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.info-table tr:last-child td {
+    border-bottom: none;
+}
+
+.info-table td:first-child {
+    width: 35%;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+.info-table td:last-child {
+    color: #ddd;
+    letter-spacing: 1px;
+}
+
+/* DESCRIPTION */
+
+.description {
+    background: #000;
+    border: 1px solid #fff;
+    padding: 30px;
+}
+
+.description p {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 2.2;
+    letter-spacing: .5px;
+}
+
+/* ABILITIES */
+
+.ability-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.ability-card {
+    background: #000;
+    border: 1px solid #fff;
+    padding: 25px;
+    transition: .3s;
+}
+
+.ability-card:hover {
+    background: #111;
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(255,255,255,.08);
+}
+
+.ability-card h3 {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.ability-card p {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* BACK BUTTON */
+
+.back {
+    display: block;
+    width: fit-content;
+    margin: 65px auto 0;
+    text-decoration: none;
+    color: white;
+    border: 1px solid #fff;
+    padding: 14px 25px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.back:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* SONG CARD */
+
+.song-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    background: #000;
+    border: 1px solid #fff;
+    transition: .3s;
+}
+
+.song-card:hover {
+    background: #111;
+    border-color: #fff;
+}
+
+.song-art {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    border: 1px solid #fff;
+}
+
+.song-art span {
+    font-size: 65px;
+    color: #fff;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #aaa;
+    margin-bottom: 12px;
+}
+
+.song-info h3 {
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.song-artist {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.song-divider {
+    width: 35px;
+    height: 1px;
+    background: #fff;
+    margin: 18px 0;
+}
+
+.song-description {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.9;
+    max-width: 500px;
+}
+
+.song-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 18px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.song-link:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: auto;
+        margin: 0 18px;
+        padding: 40px 0;
+    }
+
+    .character-intro {
+        padding: 45px 15px;
+    }
+
+    .character-intro h1 {
+        letter-spacing: 6px;
+    }
+
+    .info-wrapper {
+        padding: 10px;
+    }
+
+    .info-table td {
+        padding: 15px 8px;
+        font-size: 10px;
+    }
+
+    .info-table td:first-child {
+        width: 38%;
+        font-size: 9px;
+    }
+
+    .section-heading h2 {
+        font-size: 13px;
+    }
+
+    .ability-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .description {
+        padding: 22px;
+    }
+
+    .song-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+        gap: 22px;
+    }
+
+    .song-art {
+        width: 100%;
+        height: 150px;
+    }
+
+    .song-info h3 {
+        font-size: 19px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+    <!-- CHARACTER INTRO -->
+
+    <section class="character-intro">
+
+        <h1>SAMAEL</h1>
+
+        <div class="character-title">CLEPTOSACRA'S ALL-ROUNDER</div>
+
+        <div class="character-divider"></div>
+
+        <p class="character-quote">"Everything Eurelin has will eventually belong to me."</p>
+
+    </section>
+
+    <!-- GENERAL INFORMATION -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>GENERAL INFORMATION</h2>
+            <span>01 / PROFILE</span>
+        </div>
+
+        <div class="info-wrapper">
+
+            <table class="info-table">
+
+                <tr>
+                    <td>FULL NAME</td>
+                    <td>Samael Duropo</td>
+                </tr>
+
+                <tr>
+                    <td>SIN</td>
+                    <td>GREED</td>
+                </tr>
+
+                <tr>
+                    <td>AGE</td>
+                    <td>27</td>
+                </tr>
+
+                <tr>
+                    <td>BIRTHDAY</td>
+                    <td>?</td>
+                </tr>
+
+                <tr>
+                    <td>SEX</td>
+                    <td>MALE</td>
+                </tr>
+
+                <tr>
+                    <td>SPECIES</td>
+                    <td>HUMAN</td>
+                </tr>
+
+                <tr>
+                    <td>STATUS</td>
+                    <td>ALIVE</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- PERSONALITY -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>PERSONALITY & BACKGROUND</h2>
+            <span>02 / CHARACTER</span>
+        </div>
+
+        <div class="description">
+
+            <p>Samael Duropo is a rude, cruel, and hateful individual who rarely shows any regard for others. As Cleptosacra's all-rounder, he is responsible for carrying out whatever his father demands of him, seemingly willing to do anything to fulfill his father's wishes. However, beneath his obedience lies an ambition of his own. He wants nothing more than to take everything Eurelin has, driven by resentment and an insatiable desire for everything that belongs to them. He is not someone who easily forgives or forgets, and his hatred towards those he considers his enemies knows little restraint.</p>
+
+        </div>
+
+    </section>
+
+    <!-- ABILITIES -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>ABILITIES & TRAITS</h2>
+            <span>03 / CAPABILITIES</span>
+        </div>
+
+        <div class="ability-grid">
+
+            <div class="ability-card">
+                <h3>01 / PRIMARY ABILITY</h3>
+                <p>Golden Chains — Samael can summon golden chains capable of binding his opponents and draining their energy while they remain restrained.</p>
+            </div>
+
+            <div class="ability-card">
+                <h3>02 / SECOND ABILITY</h3>
+                <p>?</p>
+            </div>
+
+            <div class="ability-card">
+                <h3>03 / STRENGTHS</h3>
+                <p>Exceptional combat and fighting skills, alongside strong thinking and strategic abilities. He can assess situations and think through his actions during battle.</p>
+            </div>
+
+            <div class="ability-card">
+                <h3>04 / WEAKNESSES</h3>
+                <p>Anyone capable of breaking free from his golden chains can overcome one of his greatest advantages, leaving him vulnerable when his ability is rendered ineffective.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXTRA INFORMATION -->
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>ADDITIONAL DETAILS</h2>
+            <span>04 / TRIVIA</span>
+        </div>
+
+        <div class="info-wrapper">
+
+            <table class="info-table">
+
+                <tr>
+                    <td>HEIGHT</td>
+                    <td>6'0"</td>
+                </tr>
+
+                <tr>
+                    <td>LIKES</td>
+                    <td>?</td>
+                </tr>
+
+                <tr>
+                    <td>DISLIKES</td>
+                    <td>Eurelin, Gabriel, Aloy, Purity</td>
+                </tr>
+
+                <tr>
+                    <td>HOBBIES</td>
+                    <td>?</td>
+                </tr>
+
+                <tr>
+                    <td>FEARS</td>
+                    <td>?</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    
+<!-- SONG INSPIRATION -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <h2>SONG INSPIRATION</h2>
+        <span>05 / SOUNDTRACK</span>
+    </div>
+
+    <div class="song-card">
+
+        <div class="song-art">
+            <span>♫</span>
+        </div>
+
+        <div class="song-info">
+
+            <div class="song-label">
+                SONG INSPIRATION
+            </div>
+
+            <h3>The Devil in I</h3>
+
+            <p class="song-artist">Slipknot</p>
+
+            <div class="song-divider"></div>
+
+            <a href="https://www.youtube.com/results?search_query=Slipknot+The+Devil+in+I"
+               target="_blank"
+               class="song-link">
+                LISTEN TO SONG ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <a href="aedyr-characters.html" class="back">
+        ← BACK TO CHARACTERS
+    </a>
+
+</main>
+
+</body>
+</html>

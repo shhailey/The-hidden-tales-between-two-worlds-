@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Hidden Tale Between Two Worlds</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #080808;
+}
+
+/* MAIN LAYOUT */
+
+.homepage {
+    display: flex;
+    width: 100%;
+    min-height: 100svh;
+}
+
+/* WORLD SECTIONS */
+
+.world {
+    width: 50%;
+    min-height: 100svh;
+    padding: 70px 45px 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* BACKGROUNDS */
+
+.aedyr {
+    background: #080808;
+    color: #fff;
+}
+
+.aetherion {
+    background: #f5f5f5;
+    color: #080808;
+}
+
+/* DECORATIVE FRAME */
+
+.world::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255,255,255,.22);
+    pointer-events: none;
+}
+
+.aetherion::before {
+    border-color: rgba(0,0,0,.22);
+}
+
+/* TOP LABEL */
+
+.world-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+    opacity: .5;
+    margin-bottom: 65px;
+}
+
+/* TITLE AREA */
+
+.title-area {
+    width: 100%;
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 0 10px;
+}
+
+.world h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+/* SUBTITLE */
+
+.world-description {
+    font-size: 10px;
+    letter-spacing: 3px;
+    line-height: 2;
+    text-align: center;
+    opacity: .5;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+/* DIVIDER */
+
+.world-divider {
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    opacity: .4;
+    margin: 20px auto;
+}
+
+/* WORLD BUTTON */
+
+.world-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 75%;
+    max-width: 370px;
+    min-height: 75px;
+
+    margin-top: 25px;
+
+    padding: 18px 25px;
+    border-radius: 50px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(23px, 2.8vw, 35px);
+    font-weight: 400;
+    letter-spacing: 5px;
+
+    text-decoration: none;
+    transition: all .35s ease;
+}
+
+.aedyr .world-button {
+    background: #fff;
+    color: #080808;
+}
+
+.aetherion .world-button {
+    background: #080808;
+    color: #fff;
+}
+
+.world-button:hover {
+    transform: translateY(-5px);
+    opacity: .75;
+}
+
+/* FOOTER */
+
+.world-footer {
+    margin-top: auto;
+    padding-top: 70px;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    padding: 15px 25px;
+
+    border: 1px solid currentColor;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-decoration: none;
+
+    transition: all .3s ease;
+}
+
+.aedyr .nav-button {
+    color: #fff;
+}
+
+.aetherion .nav-button {
+    color: #111;
+}
+
+.aedyr .nav-button:hover {
+    background: #fff;
+    color: #080808;
+}
+
+.aetherion .nav-button:hover {
+    background: #080808;
+    color: #fff;
+}
+
+/* BOTTOM DECORATION */
+
+.world-bottom {
+    position: absolute;
+    bottom: 20px;
+
+    font-size: 8px;
+    letter-spacing: 4px;
+    opacity: .3;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .world {
+        padding: 65px 25px 40px;
+    }
+
+    .title-area {
+        height: 170px;
+    }
+
+    .world h1 {
+        font-size: clamp(35px, 5vw, 48px);
+    }
+
+    .world-button {
+        width: 85%;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .homepage {
+        flex-direction: column;
+    }
+
+    .world {
+        width: 100%;
+        min-height: 100svh;
+        padding: 65px 25px 40px;
+    }
+
+    .world::before {
+        inset: 12px;
+    }
+
+    .world-label {
+        margin-bottom: 45px;
+    }
+
+    .title-area {
+        height: 150px;
+        max-width: 450px;
+    }
+
+    .world h1 {
+        font-size: clamp(38px, 9vw, 55px);
+        letter-spacing: 2px;
+    }
+
+    .world-button {
+        width: 80%;
+        max-width: 350px;
+        min-height: 68px;
+        font-size: 28px;
+    }
+
+    .world-footer {
+        padding-top: 60px;
+    }
+
+    .nav-button {
+        min-width: 150px;
+        padding: 15px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="homepage">
+
+    <!-- AEDYR -->
+
+    <section class="world aedyr">
+
+        <div class="title-area">
+            <h1>THE HIDDEN TALE</h1>
+        </div>
+
+        <a href="aedyr.html" class="world-button">
+            AEDYR
+        </a>
+
+        <nav class="world-footer">
+            <a href="about.html" class="nav-button">
+                ABOUT
+            </a>
+        </nav>
+
+    </section>
+
+
+    <!-- AETHERION -->
+
+    <section class="world aetherion">
+
+        <div class="title-area">
+            <h1>BETWEEN TWO WORLDS</h1>
+        </div>
+
+        <a href="aetherion.html" class="world-button">
+            AETHERION
+        </a>
+
+        <nav class="world-footer">
+            <a href="authors.html" class="nav-button">
+                ABOUT AUTHORS
+            </a>
+        </nav>
+
+    </section>
+
+</main>
+
+</body>
+</html>

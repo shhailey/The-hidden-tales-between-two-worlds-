@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.header {
+    height: 65px;
+    background: #fff;
+    color: #080808;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+}
+
+.logo {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 21px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.switch {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    text-decoration: none;
+    color: #080808;
+    font-size: 11px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    padding: 9px 16px;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.switch:hover {
+    background: #080808;
+    color: #fff;
+}
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+    padding: 65px 0;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 75px 20px 65px;
+    border-bottom: 1px solid #292929;
+}
+
+.eyebrow {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 75px);
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.date {
+    margin-top: 30px;
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    margin: 65px 0 30px;
+}
+
+.section-heading span {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    margin-top: 12px;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* OVERVIEW */
+
+.overview {
+    background: #151515;
+    border-left: 3px solid #aaa;
+    padding: 30px;
+}
+
+.overview p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.overview p:last-child {
+    margin-bottom: 0;
+}
+
+/* STATISTICS */
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.stat {
+    background: #151515;
+    border: 1px solid #292929;
+    padding: 25px;
+}
+
+.stat h3 {
+    color: #fff;
+    font-size: 27px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* KINGDOMS */
+
+.kingdoms {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.kingdom {
+    background: #151515;
+    border: 1px solid #292929;
+    padding: 20px;
+}
+
+.kingdom h3 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.kingdom p {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* TIMELINE */
+
+.timeline {
+    position: relative;
+    margin-top: 40px;
+    padding-left: 30px;
+    border-left: 1px solid #555;
+}
+
+.event {
+    position: relative;
+    padding: 0 0 40px 25px;
+}
+
+.event:last-child {
+    padding-bottom: 0;
+}
+
+.event::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 4px;
+    width: 11px;
+    height: 11px;
+    background: #fff;
+    border-radius: 50%;
+    border: 3px solid #080808;
+}
+
+.event-date {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.event h3 {
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 9px;
+}
+
+.event p {
+    max-width: 650px;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.cause {
+    color: #aaa;
+    font-size: 11px;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+/* HIGHLIGHTS */
+
+.highlight {
+    background: #151515;
+    border: 1px solid #292929;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+
+.highlight span {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.highlight h3 {
+    font-size: 19px;
+    font-weight: 400;
+    margin: 13px 0;
+}
+
+.highlight p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ENDING */
+
+.ending {
+    text-align: center;
+    padding: 70px 20px;
+    margin-top: 65px;
+    border-top: 1px solid #292929;
+}
+
+.ending span {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.ending h2 {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 20px 0;
+}
+
+.ending p {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .header {
+        height: 58px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .switch {
+        font-size: 9px;
+        padding: 8px 10px;
+    }
+
+    .container {
+        width: auto;
+        margin: 0 20px;
+        padding: 35px 0;
+    }
+
+    .hero {
+        padding: 60px 10px 45px;
+    }
+
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .kingdoms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .overview {
+        padding: 22px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .event {
+        padding-left: 20px;
+    }
+
+    .event::before {
+        left: -26px;
+    }
+
+    .ending h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 13px;
+    }
+
+    .kingdoms {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+<body>
+
+<header class="header">
+    <div class="logo">THE FIRST WAR</div>
+
+    <a href="aedyr.html" class="switch back-header">
+        ← BACK TO AEDYR
+    </a>
+</header>
+
+<main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="eyebrow">AEDYR / HISTORICAL RECORDS</div>
+
+        <h1>THE FIRST WAR</h1>
+
+        <p>
+            A conflict that changed the balance of Aedyr.
+        </p>
+
+        <div class="date">
+            22 JULY 1677 — 12 DECEMBER 1683
+        </div>
+    </section>
+
+    <!-- SHORT OVERVIEW -->
+
+    <section class="section-heading">
+        <span>01 / HISTORICAL OVERVIEW</span>
+        <h2>The Beginning of an Era</h2>
+    </section>
+
+    <section class="overview">
+        <p>
+            The First War was a continental conflict between
+            Pride and the other kingdoms of Aedyr. What began
+            as growing political tension eventually developed
+            into a war that would determine the future of
+            the Seven Kingdoms.
+        </p>
+
+        <p>
+            Following Reiko's rise to power and Pride's
+            independence from Greed, the balance of power
+            across the continent began to change. Pride
+            gradually grew stronger, while relations between
+            the kingdoms became increasingly strained.
+        </p>
+
+        <p>
+            On July 22, 1677, Reiko officially declared war
+            against the other kingdoms. Greed, Wrath, Lust,
+            Envy, and eventually Gluttony formed a coalition
+            against Pride. Despite their common enemy,
+            disagreements and conflicting interests weakened
+            the alliance from within.
+        </p>
+
+        <p>
+            As the years passed, the coalition gradually
+            fell apart. Kingdoms began to fall, alliances
+            shifted, and Pride continued its campaigns
+            across the continent. On December 12, 1683,
+            the First War officially came to an end.
+        </p>
+    </section>
+
+    <!-- STATISTICS -->
+
+    <section class="statistics">
+
+        <div class="stat">
+            <h3>6 YEARS</h3>
+            <p>DURATION OF WAR</p>
+        </div>
+
+        <div class="stat">
+            <h3>7</h3>
+            <p>KINGDOMS INVOLVED</p>
+        </div>
+
+        <div class="stat">
+            <h3>1683</h3>
+            <p>YEAR OF CONCLUSION</p>
+        </div>
+
+    </section>
+
+
+<!-- KINGDOMS -->
+
+<section class="section-heading">
+    <span>02 / PARTICIPATING NATIONS</span>
+    <h2>The Seven Kingdoms</h2>
+</section>
+
+<section class="kingdoms">
+
+    <div class="kingdom">
+        <h3>Stolzelys</h3>
+        <p>Known as Pride. Led by Reiko and the central power in the First War.</p>
+    </div>
+
+    <div class="kingdom">
+        <h3>Cleptosacra</h3>
+        <p>Known as Greed. Initially opposed Stolzelys before eventually changing sides.</p>
+    </div>
+
+    <div class="kingdom">
+        <h3>Afgunspiegel</h3>
+        <p>Known as Envy. Aligned with the coalition against Stolzelys.</p>
+    </div>
+
+    <div class="kingdom">
+        <h3>Ivremiwa</h3>
+        <p>Known as Lust. Joined the coalition before attacking neutral Letisefja.</p>
+    </div>
+
+    <div class="kingdom">
+        <h3>Coleranza</h3>
+        <p>Known as Wrath. One of the founding members of the coalition.</p>
+    </div>
+
+    <div class="kingdom">
+        <h3>Gorgemont</h3>
+        <p>Known as Gluttony. Reluctantly joined the coalition before eventually collapsing.</p>
+    </div>
+
+    <div class="kingdom">
+        <h3>Letisefja</h3>
+        <p>Known as Sloth. Refused the coalition and declared neutrality.</p>
+    </div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="section-heading" id="timeline">
+    <span>03 / CHRONOLOGICAL RECORD</span>
+    <h2>The Timeline of War</h2>
+</section>
+
+<section class="timeline">
+
+    <div class="event">
+        <div class="event-date">JUNE 14, 1668</div>
+        <h3>Cleptosacra Conquers Stolzelys</h3>
+        <p>Cleptosacra establishes control over Stolzelys, beginning a period of foreign rule.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">MARCH 02, 1674</div>
+        <h3>Reiko Takes Control of Stolzelys</h3>
+        <p>At the age of 15, Reiko assumes control of Stolzelys.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">1675</div>
+        <h3>The Rebuilding of Stolzelys</h3>
+        <p>Stolzelys undergoes internal reconstruction under Reiko's leadership.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">AUGUST 19, 1676</div>
+        <h3>The Acquisition of Myojo</h3>
+        <p>Reiko acquires Myojo, and Stolzelys subsequently breaks free from Cleptosacra's control.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">JANUARY 07, 1677</div>
+        <h3>Rising Continental Tensions</h3>
+        <p>Tensions rise across the kingdoms, although no formal alliances have been established.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">JULY 22, 1677</div>
+        <h3>Declaration of War</h3>
+        <p>Reiko declares war against the other kingdoms, officially beginning the First War.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">NOVEMBER 18, 1677</div>
+        <h3>The First Coalition Pact</h3>
+        <p>Cleptosacra and Coleranza begin forming an alliance against Stolzelys.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">DECEMBER 29, 1677</div>
+        <h3>Ivremiwa Joins the Coalition</h3>
+        <p>Ivremiwa joins the emerging alliance, seeking strategic advantage.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">MARCH 14, 1678</div>
+        <h3>Afgunspiegel Joins the Coalition</h3>
+        <p>Afgunspiegel aligns itself with the coalition but avoids making a firm commitment.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">JUNE 03, 1678</div>
+        <h3>Letisefja Declares Neutrality</h3>
+        <p>Letisefja refuses to join the coalition and officially declares neutrality.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">SEPTEMBER 27, 1678</div>
+        <h3>Gorgemont Joins the Coalition</h3>
+        <p>Gorgemont reluctantly agrees to join the alliance.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">FEBRUARY 10, 1679</div>
+        <h3>Stolzelys Begins Its Continental Campaigns</h3>
+        <p>Stolzelys launches large-scale military campaigns across the continent.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">JUNE 16, 1679</div>
+        <h3>Ivremiwa Attacks Letisefja</h3>
+        <p>Ivremiwa launches an attack against neutral Letisefja, further weakening the coalition.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">NOVEMBER 03, 1679</div>
+        <h3>The Fall of Letisefja</h3>
+        <p>Letisefja falls following the mass suicide of its citizens.</p>
+        <div class="cause">CAUSE: MASS SUICIDE OF THE CITIZENS</div>
+    </div>
+
+    <div class="event">
+        <div class="event-date">MARCH 22, 1680</div>
+        <h3>The Collapse of Gorgemont</h3>
+        <p>Gorgemont begins to collapse under the pressure of famine and internal instability.. as well as a beast lurking inside the kingdom.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">JULY 21, 1680</div>
+        <h3>The Fall of Gorgemont</h3>
+        <p>Gorgemont officially falls after a significant decline in its population.</p>
+        <div class="cause">CAUSE: SIGNIFICANT POPULATION DECLINE</div>
+    </div>
+
+    <div class="event">
+        <div class="event-date">SEPTEMBER 18, 1680</div>
+        <h3>Cleptosacra's Secret Offensive</h3>
+        <p>Cleptosacra secretly prepares an independent offensive against Stolzelys.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">OCTOBER 09, 1680</div>
+        <h3>The Surprise Attack</h3>
+        <p>Cleptosacra launches its surprise attack against Stolzelys. During the assault, an injured Reiko encounters Faron.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">OCTOBER 30, 1680</div>
+        <h3>Myojo Crushes Cleptosacra's Offensive</h3>
+        <p>Myojo successfully brings Cleptosacra's independent offensive to an end.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">FEBRUARY 14, 1681</div>
+        <h3>Cleptosacra Changes Sides</h3>
+        <p>Cleptosacra abandons the coalition and aligns itself with Stolzelys.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">MAY 06, 1681</div>
+        <h3>The Coalition Disintegrates</h3>
+        <p>The coalition completely falls apart, leaving the remaining kingdoms to fight their own wars.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">SEPTEMBER 05, 1681</div>
+        <h3>The Fall of Coleranza</h3>
+        <p>Coleranza falls, and Vermil defects to Stolzelys.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">APRIL 18, 1682</div>
+        <h3>The Fall of Ivremiwa</h3>
+        <p>Ivremiwa falls, and Seraphel is surrendered to Stolzelys.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">JANUARY 26, 1683</div>
+        <h3>The Fall of Afgunspiegel</h3>
+        <p>Afgunspiegel falls, marking another major defeat in the final years of the war.</p>
+    </div>
+
+    <div class="event">
+        <div class="event-date">DECEMBER 12, 1683</div>
+        <h3>The End of the First War</h3>
+        <p>After more than six years of conflict, the First War officially comes to an end.</p>
+    </div>
+
+</section>
+</main>
+</body>
+</html>

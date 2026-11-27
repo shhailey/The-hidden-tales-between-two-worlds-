@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Characters | Aedyr</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    height: 65px;
+    background: white;
+    color: #080808;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: relative;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.switch {
+    text-decoration: none;
+    color: #080808;
+    font-size: 12px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    padding: 9px 16px;
+    transition: .3s;
+}
+
+.switch:hover {
+    background: #080808;
+    color: #fff;
+}
+
+.back-header {
+    margin-right: auto;
+}
+
+.aetherion-header {
+    margin-left: auto;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 0;
+    position: relative;
+}
+
+.page-title {
+    font-size: clamp(40px, 7vw, 75px);
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 55px;
+}
+
+/* CATEGORY HEADINGS */
+
+.category-section {
+    margin-bottom: 55px;
+}
+
+.category-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    padding-bottom: 13px;
+    margin-bottom: 20px;
+}
+
+.category-heading h2 {
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.category-heading span {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+/* RULERS SECTION */
+
+.rulers-section {
+    margin-bottom: 75px;
+    padding: 30px;
+    background: #101010;
+    border: 1px solid #303030;
+}
+
+.rulers-intro {
+    text-align: center;
+    padding: 20px 10px 35px;
+}
+
+.rulers-intro .eyebrow {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.rulers-intro h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.rulers-intro p {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.rulers-divider {
+    width: 45px;
+    height: 1px;
+    background: #777;
+    margin: 25px auto 0;
+}
+
+/* RULER GRID */
+
+.rulers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.ruler-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 155px;
+    text-decoration: none;
+    color: white;
+    background: #151515;
+    border: 1px solid #333;
+    padding: 20px 10px;
+    position: relative;
+    transition: .25s ease;
+}
+
+.ruler-card:hover {
+    background: #1d1d1d;
+    border-color: #777;
+    box-shadow: 0 0 12px rgba(255,255,255,.04);
+}
+
+/* REIKO */
+
+.ruler-card:nth-child(1) {
+    border-color: #8e805d;
+    background: #19170f;
+}
+
+.ruler-card:nth-child(1):hover {
+    background: #211e14;
+    border-color: #c0aa76;
+    box-shadow: 0 0 12px rgba(232,214,160,.08);
+}
+
+.ruler-info {
+    text-align: center;
+    padding: 15px 5px;
+}
+
+.ruler-number {
+    display: block;
+    color: #888;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.ruler-name {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.ruler-title {
+    font-size: 9px;
+    color: #888;
+    letter-spacing: 1px;
+    line-height: 1.7;
+}
+
+.pride-ruler .ruler-number {
+    color: #c0aa76;
+}
+
+.pride-ruler .ruler-name {
+    color: #f2e8ce;
+    letter-spacing: 3px;
+}
+
+.pride-ruler .ruler-title {
+    color: #b9a77e;
+}
+
+/* CHARACTER GRID */
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.character-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75px;
+    background: #151515;
+    border: 1px solid #333;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    transition: .3s ease;
+}
+
+.character-card:hover {
+    background: #202020;
+    border-color: #aaa;
+}
+
+.character-name {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* BACK TO TOP */
+
+.back {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 14px 25px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: .3s ease;
+}
+
+.back:hover {
+    background: white;
+    color: #080808;
+}
+
+/* BACKGROUND */
+
+.cosmic-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: #080808;
+}
+
+.ambient-glow,
+.celestial-ring,
+.shooting-stars {
+    display: none;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .rulers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    header {
+        height: 58px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .switch {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+    .container {
+        width: auto;
+        margin: 0;
+        padding: 40px 20px;
+    }
+
+    .page-title {
+        margin-bottom: 40px;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .character-card {
+        min-height: 65px;
+        padding: 10px 5px;
+    }
+
+    .character-name {
+        font-size: 9px;
+    }
+
+    .category-heading h2 {
+        font-size: 14px;
+    }
+
+    .category-section {
+        margin-bottom: 40px;
+    }
+
+    .rulers-section {
+        padding: 15px;
+        margin-bottom: 55px;
+    }
+
+    .rulers-intro {
+        padding: 20px 5px 30px;
+    }
+
+    .rulers-intro h2 {
+        letter-spacing: 3px;
+    }
+
+    .rulers-grid {
+        gap: 12px;
+    }
+
+    .ruler-card {
+        min-height: 140px;
+        padding: 12px 5px;
+    }
+
+    .ruler-name {
+        font-size: 10px;
+    }
+
+    .ruler-title {
+        font-size: 8px;
+    }
+}
+
+/* MYOJO HOVER */
+
+.myojo-card {
+    transition: .3s ease;
+}
+
+.myojo-card:hover {
+    background: #200d0d;
+    border-color: #c94a4a;
+    box-shadow: 0 0 15px rgba(220, 40, 40, .15);
+}
+
+.myojo-card:hover .character-name {
+    color: #ff7777;
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<header>
+    <a href="aedyr.html" class="switch back-header">
+        ← BACK TO AEDYR
+    </a>
+
+    <div class="logo">Aedyr</div>
+
+    <a href="aetherion.html" class="switch aetherion-header">
+        AETHERION ↗
+    </a>
+</header>
+
+<main class="container">
+
+    <h1 class="page-title">CHARACTERS</h1>
+
+    <section class="rulers-section">
+
+        <div class="rulers-intro">
+            <div class="eyebrow">THE SEVEN NATIONS</div>
+
+            <h2>THE SOVEREIGNS</h2>
+
+            <p>
+                Lagyan ng aura dito uwu
+                <br>
+                blah blah cool aura text
+            </p>
+
+            <div class="rulers-divider"></div>
+        </div>
+
+        <div class="rulers-grid">
+
+            <a href="reiko.html" class="ruler-card pride-ruler">
+                <div class="ruler-info">
+                    <span class="ruler-number">01 / STOLZELYS</span>
+                    <div class="ruler-name">REIKO</div>
+                    <div class="ruler-title">THE GOSPEL OF THE MORNING STAR</div>
+                </div>
+            </a>
+
+            <a href="block.html" class="ruler-card">
+                <div class="ruler-info">
+                    <span class="ruler-number">02 / CLEPTOSACRA</span>
+                    <div class="ruler-name">GABRIEL DUROPO</div>
+                    <div class="ruler-title">THE REVEREND OF STOLEN GRACE</div>
+                </div>
+            </a>
+
+            <a href="block.html" class="ruler-card">
+                <div class="ruler-info">
+                    <span class="ruler-number">03 / AFGUNSPIEGEL</span>
+                    <div class="ruler-name">RYX VALTERHIS</div>
+                    <div class="ruler-title">SOVEREIGN OF ENVY</div>
+                </div>
+            </a>
+
+            <a href="block.html" class="ruler-card">
+                <div class="ruler-info">
+                    <span class="ruler-number">04 / IVREMIWAKU</span>
+                    <div class="ruler-name">AZHAR THOMYRIS AURELIUS</div>
+                    <div class="ruler-title">SOVEREIGN OF LUST</div>
+                </div>
+            </a>
+
+            <a href="block.html" class="ruler-card">
+                <div class="ruler-info">
+                    <span class="ruler-number">05 / COLERANZA</span>
+                    <div class="ruler-name">IGNAR VALCAIR</div>
+                    <div class="ruler-title">SOVEREIGN OF WRATH</div>
+                </div>
+            </a>
+
+            <a href="block.html" class="ruler-card">
+                <div class="ruler-info">
+                    <span class="ruler-number">06 / GORGEMONT</span>
+                    <div class="ruler-name">LYSER BLANKENHEIM</div>
+                    <div class="ruler-title">SOVEREIGN OF GLUTTONY</div>
+                </div>
+            </a>
+
+            <a href="block.html" class="ruler-card">
+                <div class="ruler-info">
+                    <span class="ruler-number">07 / LETISEFJA</span>
+                    <div class="ruler-name">ELRIC NOCHTAIN</div>
+                    <div class="ruler-title">SOVEREIGN OF SLOTH</div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+  
+<!-- 01 / STOLZELYS -->
+
+<div class="category-section">
+    <div class="category-heading">
+        <h2>01 / STOLZELYS</h2>
+        <span>03 CHARACTERS</span>
+    </div>
+
+    <div class="character-grid">
+
+        <a href="myojo.html" class="character-card myojo-card">
+            <div class="character-name">MYOJO</div>
+        </a>
+
+        <a href="vermil.html" class="character-card">
+            <div class="character-name">VERMIL</div>
+        </a>
+
+        <a href="block.html" class="character-card">
+            <div class="character-name">UNKNOWN</div>
+        </a>
+
+    </div>
+</div>
+
+
+<!-- 02 / CLEPTOSACRA -->
+
+<div class="category-section">
+    <div class="category-heading">
+        <h2>02 / CLEPTOSACRA</h2>
+        <span>03 CHARACTERS</span>
+    </div>
+
+    <div class="character-grid">
+
+        <a href="samael.html" class="character-card">
+            <div class="character-name">SAMAEL</div>
+        </a>
+
+        <a href="eurelin.html" class="character-card">
+            <div class="character-name">EURELIN</div>
+        </a>
+
+        <a href="veritas.html" class="character-card">
+            <div class="character-name">VERITAS</div>
+        </a>
+
+    </div>
+</div>
+
+
+<!-- 03 / AFGUNSPIEGEL -->
+
+<div class="category-section">
+    <div class="category-heading">
+        <h2>03 / AFGUNSPIEGEL</h2>
+        <span>03 CHARACTERS</span>
+    </div>
+
+    <div class="character-grid">
+
+        <a href="block.html" class="character-card">
+            <div class="character-name">UNKNOWN</div>
+        </a>
+
+        <a href="block.html" class="character-card">
+            <div class="character-name">UNKNOWN</div>
+        </a>
+
+        <a href="block.html" class="character-card">
+            <div class="character-name">UNKNOWN</div>
+        </a>
+
+    </div>
+</div>
+
+
+<!-- 04 / IVREMIWAKU -->
+
+<div class="category-section">
+    <div class="category-heading">
+        <h2>04 / IVREMIWAKU</h2>
+        <span>03 CHARACTERS</span>
+    </div>
+
+    <div class="character-grid">
+
+        <a href="block.html" class="character-card">
+            <div class="character-name">UNKNOWN</div>
+        </a>
+
+        <a href="block.html" class="character-card">
+            <div class="character-name">UNKNOWN</div>
+        </a>
+
+        <a href="block.html" class="character-card">
+            <div class="character-name">UNKNOWN</div>
+        </a>
+
+    </div>
+</div>
