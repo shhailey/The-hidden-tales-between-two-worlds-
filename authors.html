@@ -26,8 +26,8 @@ header {
     align-items: center;
     padding: 0 5%;
 }
-
 .back-button {
+    display: inline-block;
     text-decoration: none;
     color: #080808;
     font-size: 11px;
@@ -35,7 +35,8 @@ header {
     border: 1px solid #888;
     border-radius: 30px;
     padding: 9px 16px;
-    transition: .3s;
+    transition: .3s ease;
+    cursor: pointer;
 }
 
 .back-button:hover {
@@ -204,15 +205,18 @@ header {
         margin-top: 45px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <a href="index.html" class="back-button">
+    <a href="javascript:history.back()" class="back-button">
         ← BACK
     </a>
+</header>
+
 </header>
 
 <main class="container">
@@ -224,7 +228,7 @@ header {
     <section class="author-profile">
 
         <div class="author-image">
-            <img src="Screenshot_20260915-225133.jpg" alt="Description of the image">
+            <img src="Screenshot_20260915-225133.jpg" alt="Picture">
         </div>
 
         <div class="author-info">
